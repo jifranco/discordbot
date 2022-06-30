@@ -1,5 +1,5 @@
 const {Client, Intents, MessageActionRow, MessageButton, Emoji} = require('discord.js');
-const { token } = require('./config.json')
+const { token } = require('../config.json')
 const { TicTacToe } = require('./databaseObjects.js');
 
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
@@ -91,7 +91,7 @@ function isGameOver(){
     }
     if (tictactoe_state[1][1]!=EMPTY){
         if(
-            (tictactoe_state[0][0] == tictactoe_state[1][1] && tictactoe_state[1][1] == tictactoe_state[0][2])
+            (tictactoe_state[0][0] == tictactoe_state[1][1] && tictactoe_state[1][1] == tictactoe_state[2][2])
             ||(tictactoe_state[2][0] == tictactoe_state[1][1] && tictactoe_state[1][1]==tictactoe_state[0][2])){
             return true
         }
